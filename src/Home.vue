@@ -31,27 +31,17 @@
       <span>{{ image.author }}</span>
     </div>
   </div>
-</main>
 
-
-    <main class="image-grid">
-      <div v-for="image in images" :key="image.id" class="grid-item">
-        <img :src="image.imageUrl" :alt="image.author" loading="lazy" />
-        <div class="overlay">
-          <span>{{ image.author }}</span>
-        </div>
-      </div>
-    </main>
-
-     <!-- Botão -->
+  <!-- Botão "carregar mais" dentro do grid -->
   <div class="grid-item load-more-item">
-    <main>
     <button @click="loadMore" :disabled="isLoading" class="load-more-btn">
       {{ isLoading ? 'Carregando...' : 'Carregar Mais' }}
     </button>
-  
+  </div>
 </main>
-</div>
+
+
+
     
     <footer class="footer">
       <div class="footer-section contact">
@@ -117,4 +107,5 @@ const subscribe = () => {
 onMounted(() => {
   loadMore();
 });
+
 </script>
